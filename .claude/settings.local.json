@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__opgg__lol_get_summoner_profile",
+      "mcp__opgg__lol_get_champion_analysis",
+      "mcp__opgg__lol_get_lane_matchup_guide",
+      "Bash(claude -p \"say hi\")",
+      "Bash(claude -p \"say hi briefly\" --output-format stream-json --include-partial-messages)",
+      "Bash(claude -p \"say hi briefly\" --output-format stream-json --include-partial-messages --verbose)",
+      "Bash(npm init:*)",
+      "Bash(pip3 list:*)",
+      "Bash(pip3 install:*)",
+      "Bash(curl -s -X POST http://localhost:5000/api/chat -H 'Content-Type: application/json' -d '{\"message\":\"[Game: LOL] Say hi briefly in one sentence\"}' --max-time 30)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "opgg"
+  ]
+}

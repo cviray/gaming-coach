@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaming Coach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/public/style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- Top Bar -->
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <img src="/public/icons/logo.png" alt="" class="brand-logo" />
+          <span class="brand-name">Gaming Coach</span>
+        </div>
+
+        <nav class="game-tabs">
+          <button class="tab active" data-game="lol">
+            <span class="tab-dot lol"></span>League of Legends
+          </button>
+          <button class="tab" data-game="tft">
+            <span class="tab-dot tft"></span>TFT
+          </button>
+          <button class="tab" data-game="valorant">
+            <span class="tab-dot valorant"></span>Valorant
+          </button>
+        </nav>
+
+        <div class="topbar-right">
+          <span class="live-badge">
+            <span class="live-dot"></span>OP.GG server
+          </span>
+          <button class="icon-btn" id="clear-btn" title="New chat">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="main">
+      <div class="feed" id="messages">
+
+        <!-- Welcome -->
+        <div class="welcome" id="welcome">
+          <div class="welcome-eyebrow" id="welcome-eyebrow"><span class="eyebrow-game lol">League of Legends</span></div>
+          <h1 class="welcome-title">From the Rift to the Range —<br/><span class="title-accent">dominate</span> every arena.</h1>
+          <p class="welcome-sub">Ask anything — builds, counters, summoner stats, meta, matchups.</p>
+
+          <div class="card-grid">
+            <button class="prompt-card" data-prompt="What's the best Jinx build and runes right now?">
+              <span class="card-icon">⚔</span>
+              <span class="card-label">Best Jinx build & runes</span>
+            </button>
+            <button class="prompt-card" data-prompt="Who are Jinx's top 3 counters and how do I play against them?">
+              <span class="card-icon">🛡</span>
+              <span class="card-label">Top counters & how to lane</span>
+            </button>
+            <button class="prompt-card" data-prompt="What are the best meta decks in TFT right now?">
+              <span class="card-icon">♟</span>
+              <span class="card-label">TFT meta decks</span>
+            </button>
+            <button class="prompt-card" data-prompt="What are the best Valorant agents on Ascent right now?">
+              <span class="card-icon">◎</span>
+              <span class="card-label">Best agents on Ascent</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Input -->
+      <div class="composer">
+        <div class="composer-inner">
+          <div class="composer-box" id="composer-box">
+            <textarea
+              id="input"
+              placeholder="Ask your coach..."
+              rows="1"
+              autocomplete="off"
+              spellcheck="false"
+            ></textarea>
+            <div class="composer-footer">
+              <span class="context-pill" id="context-pill">
+                <span class="context-dot lol" id="context-dot"></span>
+                <span id="context-label">LoL</span>
+              </span>
+              <button id="send-btn" class="send-btn" disabled>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <p class="composer-hint">Enter to send · Shift+Enter for new line</p>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="/public/app.js"></script>
+</body>
+</html>
